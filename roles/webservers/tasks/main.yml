@@ -4,9 +4,11 @@
     apt:  name={{ item }} state=present update_cache=yes
     with_items:
       - apache2
-      - mysql-common
+      - mysql-server
       - php5
       - libapache2-mod-php5
+      - python-mysqldb
+      - php5-mysql
 
   - name: update mysql root password
     mysql_user: name=root host={{ item }} password={{ mysql_root_password }}
@@ -15,6 +17,10 @@
       - 127.0.0.1
       - ::1
       - localhost
+
+  - name: copy my.cnf file to server
+    template: src=my.cnf.j2 dest=~/.my.cnf
+
 
   - name: create mysql database for wordpress
     mysql_db: name=wordpress state=present login_user=root login_password={{ mysql_root_password }}
@@ -29,15 +35,10 @@
                 state=present
 
   - name: download wordpress files
-    get_url:
+    get_url: url=https://wordpress.org/latest.tar.gz dest=/var/www/html/wordpress.tar.gz
 
   - name: inflate the contents of the wordpress archive
-    unarchive: 
+    unarchive: src=/var/www/html/wordpress.tar.gz dest=/var/www/html group=www-data owner=www-data copy=no
 
   - name: replace wordpress config with template
-    template:
-
-
-
-
-# vim:ft=ansible:
+    template: src=wp-config.php.j2 dest=/var/www/html/wordpress/wp-config.php
