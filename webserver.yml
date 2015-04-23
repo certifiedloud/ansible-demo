@@ -1,0 +1,22 @@
+---
+
+- hosts: webservers
+  remote_user: root
+
+  tasks:
+    - name: install needed packages
+      apt:  name={{ item }} state=present update_cache=yes
+      with_items:
+        - apache2
+        - mysql-common
+        - php5-cgi
+
+    - name: update mysql root password
+      mysql_user: name=root host={{ item }} password={{ mysql_root_password }}
+      with_items:
+        - $ansible_hostname
+        - 127.0.0.1
+        - ::1
+        - localhost
+
+# vim:ft=ansible:
