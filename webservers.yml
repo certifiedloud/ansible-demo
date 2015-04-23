@@ -1,0 +1,7 @@
+---
+
+- name: create LAMP stack
+  hosts: webservers
+  remote_user: root
+  roles:
+    - webservers
