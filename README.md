@@ -57,8 +57,7 @@ I use DigitalOcean for quick VM's to test playbooks on. You can get a $10 credit
 
 To test this out, follow these steps:
 
-1 clone this repo
-1 [install Ansible.](http://docs.ansible.com/intro_installation.html)
-1 add an ip or hostname to the inventory file (hosts)
-1 then run the playbook like this `ansible-playbook webservers.yml -i hosts`
-
+1. clone this repo
+1. [install Ansible.](http://docs.ansible.com/intro_installation.html)
+1. add an ip or hostname to the inventory file (hosts)
+1. then run the playbook like this `ansible-playbook webservers.yml -i hosts`
