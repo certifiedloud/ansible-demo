@@ -54,3 +54,11 @@ For example, if we wanted to use an ad hoc command to update a specific package 
 While this is indeed awesome, it barely scratches the surface of what Ansible can do! Let's clone this repo and run the provided playbook on a virtual machine to see more of it's power. 
 
 I use DigitalOcean for quick VM's to test playbooks on. You can get a $10 credit by clicking [here](https://www.digitalocean.com/?refcode=2b1b2cf6c56b).
+
+To test this out, follow these steps:
+
+1 clone this repo
+1 [install Ansible.](http://docs.ansible.com/intro_installation.html)
+1 add an ip or hostname to the inventory file (hosts)
+1 then run the playbook like this `ansible-playbook webservers.yml -i hosts`
+
