@@ -36,6 +36,7 @@ The list of available modules is a long one, but some of the most common ones ar
 
 	- apt used to install packages on debian based system.
 	- yum the RHEL equivelent to the above
-	- template used to pre-fill a template based on variables, then send the resulting file to the node
+	- template used to pre-fill a template based on variables, 
+then send the resulting file to the node
 
 Once you have a playbook written, ansible parses it and does your will on the target machine through ssh.
