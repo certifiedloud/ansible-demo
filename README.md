@@ -39,3 +39,15 @@ The list of available modules is a long one, but some of the most common ones ar
 - __template__ used to pre-fill a template based on variables, then send the resulting file to the node
 
 Once you have a playbook written, ansible parses it and does your will on the target machine through ssh.
+
+# Let's give it a try
+
+The first thing you need to do is [install Ansible.](http://docs.ansible.com/intro_installation.html)
+Once you have it on your computer, the first thing you might want to try is running and _ad hoc_ command. 
+This is the quicket way to see Ansible in action because you don't actually have to write a playbook. 
+
+You do it like this `ansible <hosts> -m <module> -a "arguments"`
+
+For example, if we wanted to use an ad hoc command to update a specific package we'd do it like this:
+`ansible -m all -m apt -a "name=openssl update_cache=yes state=latest"`
+
