@@ -49,5 +49,8 @@ This is the quicket way to see Ansible in action because you don't actually have
 You do it like this `ansible <hosts> -m <module> -a "arguments"`
 
 For example, if we wanted to use an ad hoc command to update a specific package we'd do it like this:
-`ansible -m all -m apt -a "name=openssl update_cache=yes state=latest"`
+`ansible -i hosts zone1-loadbalancers -u root -m apt -a "name=openssl update_cache=yes state=latest"`
 
+While this is indeed awesome, it barely scratches the surface of what Ansible can do! Let's clone this repo and run the provided playbook on a virtual machine to see more of it's power. 
+
+I use DigitalOcean for quick VM's to test playbooks on. You can get a $10 credit by clicking [here](https://www.digitalocean.com/?refcode=2b1b2cf6c56b).
