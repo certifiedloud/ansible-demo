@@ -34,8 +34,8 @@ To make use of Ansible, you must write what's called a 'playbook'. This is nothi
 You envoke any number Ansible's extensive [list of modules](http://docs.ansible.com/modules_by_category.html). 
 The list of available modules is a long one, but some of the most common ones are:
 
-- _apt_ used to install packages on debian based system.
-- _yum_ the RHEL equivelent to the above
-- _template_ used to pre-fill a template based on variables, then send the resulting file to the node
+- __apt__ used to install packages on debian based system.
+- __yum__ the RHEL equivelent to the above
+- __template__ used to pre-fill a template based on variables, then send the resulting file to the node
 
 Once you have a playbook written, ansible parses it and does your will on the target machine through ssh.
