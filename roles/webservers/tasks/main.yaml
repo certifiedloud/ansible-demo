@@ -34,6 +34,9 @@
                 login_user=root
                 state=present
 
+  - name: set perms on /var/www/html
+    file: dest=/var/www/html state=directory mode=755 owner=www-data group=www-data
+
   - name: download wordpress files
     get_url: url=https://wordpress.org/latest.tar.gz dest=/var/www/html/wordpress.tar.gz
 
